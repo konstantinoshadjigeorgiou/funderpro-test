@@ -1,0 +1,156 @@
+@use "../variables"as *;
+
+.cards-section {
+    padding-top: 0;
+}
+
+.cards-component {
+    &.end {
+        justify-content: flex-end;
+    }
+
+    .cards-component-inner {
+        .title-wrapper {
+            .title {
+                font-size: 76px;
+                font-weight: 600;
+                max-width: 500px;
+                line-height: 50px;
+                color: #251F6E;
+                margin:0 auto;
+
+                @include b-575 {
+                    font-size: 42px;
+                    line-height: 42px;
+                    text-align: left;
+                }
+            }
+
+            .description p {
+                line-height: 20px;
+                font-weight: 300;
+                font-size: 24px;
+                text-align: center;
+                color: #848484;
+                max-width: 650px;
+                margin: 0 auto;
+                padding-top: 20px;
+
+                @include b-575 {
+                    text-align: left;
+                    padding-top: 0;
+                }
+            }
+        }
+
+        .cards-wrapper {
+            display: grid;
+            gap: 2rem;
+
+            .cards {
+                @include b-991-up {
+                    display: flex;
+                    gap: 1rem;
+                    width: 100%;
+                }
+
+                @include b-1199-up {
+                    gap: 2rem;
+                }
+
+                .card {
+                    background-color: hsl(var(--white));
+                    border-radius: 15px;
+                    border: 3px solid transparent;
+
+                    &:hover{
+                        border: 3px solid #6371F4;
+                    }
+
+
+                    @include b-991-up {
+                        display: flex;
+                        flex: 1;
+                        margin: 0;
+                    }
+
+
+                    .card-inner {
+                        display: grid;
+                        padding: 1.5rem;
+                        gap: 0.5rem;
+                        width: 100%;
+
+                        @include b-991-up {
+                            margin: 1rem;
+                            width: 100%;
+                        }
+
+                        @include b-1199-up {
+                            padding-top: 0;
+                            padding-bottom: 2rem;
+                        }
+
+                        // check these. center ?
+                        &.start {
+                            align-items: flex-start;
+                            align-content: flex-start;
+                        }
+
+                        &.end {
+                            align-items: flex-end;
+                            align-content: flex-end;
+                        }
+
+                        .title {
+                            font-weight: 600;
+                            color: #251F6E;
+                            line-height: 1.2;
+                            font-size: 38px;
+                            text-align: center;
+                        }
+
+                        header {
+                            display: grid;
+                            gap: 1.5rem;
+
+                            .image {
+                                background-size: contain;
+                                background-repeat: no-repeat;
+                                max-width: 200px;
+                                margin:0 auto;
+
+                                @include between-991-1199 {
+                                    aspect-ratio: 16/11;
+                                }
+                            }
+                        }
+
+                        .main {
+                            display: grid;
+                            gap: 1.5rem;
+
+                            .description p{
+                                font-weight: 300;
+                                line-height: 20px;
+                                font-size: 24px;
+                                text-align: center;
+                                color: #848484;
+                                
+                                &>:last-child {
+                                    margin-bottom: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+
+            .media-wrapper {
+                display: grid;
+                place-items: center;
+            }
+        }
+    }
+}
